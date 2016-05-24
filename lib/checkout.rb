@@ -10,6 +10,6 @@ class Checkout
   end
 
   def scan item
-    @basket << item
+    ProductList::items[item].nil? ? return : @basket << item
   end
 end
