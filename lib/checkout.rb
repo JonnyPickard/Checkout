@@ -1,15 +1,16 @@
 require_relative 'product_list'
 
 class Checkout
-  include ProductList
-
-  attr_reader :basket
+  attr_reader :basket, :products
 
   def initialize
     @basket = []
+    @products = ProductList::items
   end
 
-  def scan item
-    ProductList::items[item].nil? ? return : @basket << item
+  def scan item_code
+    @products[item_code].nil? ? return : @basket << item_code
   end
+
+
 end
