@@ -1,4 +1,5 @@
 require_relative 'product_list'
+require_relative 'promotions'
 
 class Checkout
 
