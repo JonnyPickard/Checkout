@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe Promotions do
 
-
-  subject(:promotions) { described_class.new() }
+  subject(:promotions) { described_class.new }
 
   describe "#two_or_more_travel_card_holders?" do
     it "should correct the working total to reflect the two travel card holder discount" do

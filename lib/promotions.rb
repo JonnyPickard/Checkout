@@ -20,10 +20,12 @@ class Promotions
   end
 
   def over_sixty_pounds
-     @working_total *= 0.9 if @working_total > 60
+    @working_total *= 0.9 if @working_total > 60
   end
 
   private
 
   attr_reader :working_total, :basket
+
+
 end

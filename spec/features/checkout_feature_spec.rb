@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-xdescribe "Basket 1" do
+describe "Basket 1" do
   it "is expected to calculate the correct total" do
-    co = Checkout.new(promotional_rules)
+    co = Checkout.new(promotional_rules=Promotions.new)
 
     co.scan(001)
     co.scan(002)
@@ -14,9 +14,9 @@ xdescribe "Basket 1" do
   end
 end
 
-xdescribe "Basket 2" do
+describe "Basket 2" do
   it "is expected to calculate the correct total" do
-    co = Checkout.new(promotional_rules)
+    co = Checkout.new(promotional_rules=Promotions.new)
 
     co.scan(001)
     co.scan(003)
@@ -28,9 +28,9 @@ xdescribe "Basket 2" do
   end
 end
 
-xdescribe "Basket 3" do
+describe "Basket 3" do
   it "is expected to calculate the correct total" do
-    co = Checkout.new(promotional_rules)
+    co = Checkout.new(promotional_rules=Promotions.new)
 
     co.scan(001)
     co.scan(002)

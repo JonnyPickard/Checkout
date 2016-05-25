@@ -3,9 +3,10 @@ require_relative 'promotions'
 
 class Checkout
 
-  def initialize
+  def initialize(promotional_rules)
     @basket = []
     @products = ProductList::items
+    @promotions_calculator = promotional_rules
   end
 
   def scan item_code
@@ -16,6 +17,10 @@ class Checkout
     total = 0
     @basket.each { | item_code | total += @products[item_code][:price] }
     total
+  end
+
+  def total
+    @promotions_calculator.apply_promotion(total_before_promotions, @basket)
   end
 
   private
