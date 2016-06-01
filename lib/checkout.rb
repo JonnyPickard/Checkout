@@ -1,5 +1,5 @@
 require_relative 'product_list'
-require_relative 'promotions'
+require_relative 'promotions/promotions_calculator'
 
 class Checkout
 
