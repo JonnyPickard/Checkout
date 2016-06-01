@@ -14,9 +14,7 @@ class Checkout
   end
 
   def total_before_promotions
-    total = 0
-    @basket.each { | item_code | total += @products[item_code][:price] }
-    total
+    @basket.inject(0) { | sum, item_code | sum + @products[item_code][:price] }
   end
 
   def total

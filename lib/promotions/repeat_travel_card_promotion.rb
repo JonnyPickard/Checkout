@@ -1,12 +1,9 @@
 class RepeatTravelCardPromotion
 
   def apply(basket, working_total)
-    amount = 0
-    basket.each do | item_code |
-      amount += 1 if item_code == 001
-    end
+    sum = basket.inject { | sum, item_code | item_code == 001 ? sum + 1 : sum }
 
-    amount >= 2 ? (working_total -= amount * 0.75) : working_total
+    sum >= 2 ? (working_total -= sum * 0.75) : working_total
   end
 
 end
