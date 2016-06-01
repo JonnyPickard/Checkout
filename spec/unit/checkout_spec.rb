@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Checkout do
 
-  subject(:checkout) { described_class.new(promotions: promotions) }
+  subject(:checkout) { described_class.new(promotions: promotions, products: ProductList::items) }
 
   let(:promotions) { instance_spy("Promotions") }
 

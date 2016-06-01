@@ -20,6 +20,8 @@ class Checkout
   end
 
   def total
+    return total_before_promotions if @promotions_calculator.nil?
+
     @promotions_calculator.apply_promotion(total_before_promotions, @basket)
   end
 
