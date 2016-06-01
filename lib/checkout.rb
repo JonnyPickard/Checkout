@@ -3,10 +3,10 @@ require_relative 'promotions'
 
 class Checkout
 
-  def initialize(promotional_rules)
+  def initialize(options)
+    @products = options[:products]
+    @promotions_calculator = options.fetch(:promotional_rules, nil)
     @basket = []
-    @products = ProductList::items
-    @promotions_calculator = promotional_rules
   end
 
   def scan item_code
