@@ -8,10 +8,10 @@ class Promotions
   end
 
   def apply_promotion(total_before_promotions, basket)
-    @working_total = @repeat_travel_card_promotion.apply(basket, total_before_promotions)
-    @working_total = @over_60_pounds_promotion.apply(@working_total)
+    working_total = @repeat_travel_card_promotion.apply(basket, total_before_promotions)
+    final_total = @over_60_pounds_promotion.apply(working_total)
 
-    @working_total.round(2)
+    final_total.round(2)
   end
 
   private
