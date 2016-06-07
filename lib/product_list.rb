@@ -1,9 +1,11 @@
+require 'money'
+
 module ProductList
   def self.items
     {
-      001 => { product: "Travel Card Holder", price: 9.25 },
-      002 => { product: "Personalised cufflinks", price: 45.00 },
-      003 => { product: "Kids T-shirt", price: 19.95 }
+      001 => { product: "Travel Card Holder", price: Money.new(925, "GBP") },
+      002 => { product: "Personalised cufflinks", price: Money.new(4500, "GBP") },
+      003 => { product: "Kids T-shirt", price: Money.new(1995, "GBP") }
     }
   end
 end

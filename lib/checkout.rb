@@ -1,18 +1,21 @@
 require_relative 'product_list'
-require_relative 'promotions'
+require_relative 'promotions/promotions_calculator'
 
 class Checkout
 
-  def initialize(promotional_rules = nil)
+  def initialize(options)
+    @products = options[:products]
+    @promotions_calculator = options.fetch(:promotional_rules, nil)
     @basket = []
-    @products = ProductList::items
-    @promotions_calculator = promotional_rules
   end
 
   def scan item_code
     @products[item_code].nil? ? return : @basket << item_code
   end
 
+  def total_before_promotions
+    @basket.inject(0) { | sum, item_code | sum + @products[item_code][:price] }
+  end
 
   def total
     return total_before_promotions if @promotions_calculator.nil?
@@ -23,11 +26,5 @@ class Checkout
   private
 
   attr_reader :basket, :products
-
-  def total_before_promotions
-    total = 0
-    @basket.each { | item_code | total += @products[item_code][:price] }
-    total
-  end
 
 end
