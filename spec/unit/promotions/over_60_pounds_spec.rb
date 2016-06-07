@@ -6,7 +6,7 @@ describe Over60PoundsPromotion do
 
   describe "#over_sixty_pounds" do
     it "should subtract ten percent from the working total when it is over sixty pounds" do
-      expect(over_sixty_pounds.apply(61.00)).to eq(54.90)
+      expect(over_sixty_pounds.apply(Money.new(6100, "GBP"))).to eq(Money.new(5490, "GBP"))
     end
   end
 end

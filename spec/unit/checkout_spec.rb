@@ -22,7 +22,7 @@ describe Checkout do
     it "calculates the total price of the basket before promotions" do
       checkout.instance_variable_set(:@basket, [001, 002, 003])
 
-      expect(checkout.total_before_promotions).to eq 74.20
+      expect(checkout.total_before_promotions).to eq Money.new(7420, "GBP")
     end
   end
 

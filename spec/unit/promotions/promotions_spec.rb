@@ -6,7 +6,7 @@ describe Promotions do
 
   describe "#apply_promotion" do
     it "return a total of the correct promotions" do
-      expect(promotions.apply_promotion(63.50, [001, 001, 002])).to eq(55.80)
+      expect(promotions.apply_promotion(Money.new(6350, "GBP"), [001, 001, 002])).to eq(Money.new(5580, "GBP"))
     end
   end
 

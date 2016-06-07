@@ -10,7 +10,7 @@ describe "Basket 1" do
 
     price = co.total
 
-    expect(price).to eq 66.78
+    expect(price).to eq Money.new(6678, "GBP")
   end
 end
 
@@ -24,7 +24,7 @@ describe "Basket 2" do
 
     price = co.total
 
-    expect(price).to eq 36.95
+    expect(price).to eq Money.new(3695, "GBP")
   end
 end
 
@@ -39,7 +39,7 @@ describe "Basket 3" do
 
     price = co.total
 
-    expect(price).to eq 73.76
+    expect(price).to eq Money.new(7376, "GBP")
   end
 end
 
@@ -54,6 +54,6 @@ describe "Basket 4" do
 
     price = co.total
 
-    expect(price).to eq 83.45
+    expect(price).to eq Money.new(8345, "GBP")
   end
 end
